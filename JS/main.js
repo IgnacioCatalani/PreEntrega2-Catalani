@@ -20,7 +20,7 @@ function calcularPrecioEnCuotasConImpuesto(precio, cuotas) {
 }
 
 //Los 4 Productos que se ofrecen
-let productos = prompt("Ingresa el producto que querés comprar: \n 1-Pastillas de freno \n 2-Fuelles \n 3-Cazoletas \n 4-Bombas Hidráulicas");
+let productos = prompt("Ingresa el producto que querés comprar: \n 1-Pastillas de freno \n 2-Fuelles \n 3-Cazoletas \n 4-Bombas Hidráulicas \n 0-Salir");
 switch(productos){
     case "1":
         alert("Seleccionaste Pastillas de freno")
@@ -33,7 +33,13 @@ switch(productos){
         break;    
     case "4":
         alert("Seleccionaste Bombas Hidráulicas")
-        break;    
+        break;  
+    case "0":
+        alert("Has salido sin elegir productos.")
+        break;  
+        default:
+            alert("Opción inválida.");
+            break; 
 }
 
 
