@@ -67,7 +67,7 @@ do {
     numeroCuotas = parseInt(numeroCuotasUsuario);
 
     if(numeroCuotas !== 6 && numeroCuotas !== 12) {
-        alert("Ingresa un número de cuotas válido");
+        alert("Ingresa un número de cuotas válido (6 o 12) ");
     }
 } while (numeroCuotas !== 6 && numeroCuotas !== 12);
 
