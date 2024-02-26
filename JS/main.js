@@ -69,7 +69,7 @@ let precioProducto = obtenerPrecioProducto(productos);
 let numeroCuotas;
 
 do {
-    let numeroCuotasUsuario = prompt("Ingrese el número de cuotas que desea:");
+    let numeroCuotasUsuario = prompt("Ingrese el número de cuotas que desea (6 o 12): ");
     numeroCuotas = parseInt(numeroCuotasUsuario);
 
     if(numeroCuotas !== 6 && numeroCuotas !== 12) {
@@ -79,3 +79,51 @@ do {
 
 let resultado = calcularPrecioEnCuotasConImpuesto(precioProducto, numeroCuotas);
 alert(resultado);
+
+
+// Codigo Pre entrega 2
+
+const productosarray = [
+    {id: 1, nombre: "Pastillas de freno", precio: 30000 },
+    {id: 2, nombre: "Fuelles", precio: 4500 },
+    {id: 3, nombre: "Cazoletas", precio: 18900 },
+    {id: 4, nombre: "Bombas Hidráulicas", precio: 50000 }
+    ];
+console.log(productosarray);
+
+//Busqueda y filtrado
+function buscarProducto(arr, repuesto) {
+    return arr.find((el)=>el.nombre.includes(repuesto))
+}
+
+let buscar= buscarProducto(productosarray, "Pastillas")
+let buscar2= buscarProducto(productosarray, "Ca")
+console.log(buscar);
+console.log(buscar2);
+
+//Llego un aumento en la lista de las pastillas de freno las cuales aumentaron un 20%
+
+function aplicarAumento(productos) {
+    const productoAumentado = productos.find(producto => producto.nombre === "Pastillas de freno");
+    if (productoAumentado) {
+        productoAumentado.precio *= 1.20;
+    }
+    return productoAumentado;
+}
+
+const productoConAumento = aplicarAumento(productosarray)
+console.log(productoConAumento);
+
+
+//Descuento del 10% en Bombas Hidraulicas
+function aplicarPromocion(productos) {
+    const productoPromocionado = productos.find(producto => producto.nombre === "Bombas Hidráulicas");
+    if (productoPromocionado) {
+        productoPromocionado.precio *= 0.90;
+       }
+    return productoPromocionado;
+}
+
+const productoConPromocion = aplicarPromocion(productosarray);
+console.log(productoConPromocion);
+
