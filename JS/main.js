@@ -127,3 +127,25 @@ function aplicarPromocion(productos) {
 const productoConPromocion = aplicarPromocion(productosarray);
 console.log(productoConPromocion);
 
+
+// Agrego un producto nuevo al array original
+class Producto {
+    constructor(id, nombre, precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
+
+Producto.agregarProducto = function(id, nombre, precio) {
+    productosarray.push(new Producto(id, nombre, precio));
+};
+
+
+Producto.agregarProducto(5, "Bujías", 12999);
+
+console.log(productosarray);
+
+//Metodo Math
+const precioTotal = Math.round(productosarray.reduce((total, producto) => total + producto.precio, 0));
+console.log(`El precio total de los productos es: $${precioTotal}`);
